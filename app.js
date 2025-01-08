@@ -2,6 +2,11 @@ import express from 'express'
 
 const app=express()
 
+
+app.use(express.json());
+
+app.use(express.urlencoded({extend:true}))
+
 const PORT = process.env.PORT || 4000
 
 app.get('/health',(request,response)=>{
